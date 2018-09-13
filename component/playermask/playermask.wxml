@@ -1,0 +1,53 @@
+<view class='playerMask'>
+
+    <view class='maskCenter'>
+        <view class='expression'>
+            <image src='{{expression}}' />
+        </view>
+
+        <view class='partition' wx:if="{{!ifShowDraw}}" />
+        <view class='drawpartition' wx:if="{{ifShowDraw}}" />
+
+        <view class='contentbox' wx:if="{{!ifShowDraw}}">
+            <view class='answerFlag' style='color:{{textcolor}}'>
+                {{answerflg}}
+            </view>
+
+            <view class='maskCdBox'>
+                <image class='discImg' src='/assets/player/disc.png' />
+                <image class='cdcireImg' src='/assets/player/cdcire.png' />
+                <image class='playerbtnImg' src='/assets/mask/playerbtn.png' />
+            </view>
+
+            <view class='songName'>
+                {{songName}}
+            </view>
+
+        </view>
+
+        <view class='contentbox' wx:if="{{ifShowDraw}}">
+
+            <view class='maskCdBox'>
+                <image class='drawIcon' src='/assets/mask/drawicon.png' />
+            </view>
+
+            <view class='drawtext'>
+                {{songName}}
+            </view>
+
+        </view>
+
+        <view class='botBtn' bindtap='{{masktap}}'>
+            {{btntext}}
+            <button wx:if="{{ifShowShareBtn}}" class='getchanceBtn' open-type="share"></button>
+        </view>
+        
+
+    </view>
+
+    <view class='maskad' bindtap='adclickevent' wx:if="{{ifshowmaskAD}}">
+        <image src='/assets/mask/maskad.png' />
+        <navigator target="miniProgram" open-type="navigate" app-id="{{navAppid}}" path="/pages/index/index" extra-data="{{extraData}}" version="release"></navigator>
+    </view>
+
+</view>

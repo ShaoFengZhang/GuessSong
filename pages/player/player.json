@@ -1,0 +1,9 @@
+{
+    "navigationBarBackgroundColor": "#4D138C",
+    "navigationBarTitleText": "悟空猜歌",
+    "navigationBarTextStyle": "white",
+    "usingComponents": {
+        "play-mask": "/component/playermask/playermask"
+    },
+    "disableScroll": true
+}

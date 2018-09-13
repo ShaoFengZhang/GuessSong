@@ -1,0 +1,44 @@
+<view class="bg">
+    <view class='rankTopADBox rankadbox'>
+        <view class='topad ad' wx:if="{{ifShowRankOneAd}}" bindtap='adClickEvent' data-adId='{{rankOneAd.id}}'>
+            <navigator wx:if="{{rankOneAd.type==1}}" target="miniProgram" open-type="navigate" app-id="{{rankOneAd.appid}}" path="{{rankOneAd.link || '/pages/index/index'}}" extra-data="" version="release">
+                <image mode="aspectFill" src='{{rankOneAd.pic}}' />
+            </navigator>
+
+            <navigator wx:if="{{rankOneAd.type==2}}" url="/pages/webview/webview?url={{rankOneAd.link}}">
+                <image mode="aspectFill" src='{{rankOneAd.pic}}' />
+            </navigator>
+        </view>
+    </view>
+
+    <view class='scrollbox' style='height:{{scrollboxHeight}}'>
+        <scroll-view scroll-y style="height: 100%;">
+            <view class="scroll-view-item" wx:for="{{iteamArr}}" wx:key="index" wx:if="{{iteamArr.length}}">
+                <text class='userindex'>{{index+1}}</text>
+                <image src='{{item.avatar_url || "/assets/envelopes/kairedbao.png"}}' />
+                <text class='username'>{{item.nick_name}}</text>
+                <text class='usermoney'>￥{{item.accumulative}}</text>
+            </view>
+            <view class='nonum' wx:if="{{!iteamArr.length}}">
+                <image src='/assets/usercenter/norecord.png' />
+                <view class='nonumtxt'>暂无数据</view>
+            </view>
+            
+        </scroll-view>
+
+    </view>
+
+    <view class='rankBotADBox rankadbox'>
+        <view class='rankbotad ad' wx:if="{{ifShowRankTwoAd}}" bindtap='adClickEvent' data-adId='{{rankTwoAd.id}}'>
+            <navigator wx:if="{{rankTwoAd.type==1}}" target="miniProgram" open-type="navigate" app-id="{{rankTwoAd.appid}}" path="{{rankTwoAd.link || '/pages/index/index'}}" extra-data="" version="release">
+                <image mode="aspectFill" src='{{rankTwoAd.pic}}' />
+            </navigator>
+
+            <navigator wx:if="{{rankTwoAd.type==2}}" url="/pages/webview/webview?url={{rankTwoAd.link}}">
+                <image mode="aspectFill" src='{{rankTwoAd.pic}}' />
+            </navigator>
+            
+        </view>    
+    </view>
+    <ad unit-id="adunit-b50a453bc8dae4bc" class="tecentAD"></ad>
+</view>

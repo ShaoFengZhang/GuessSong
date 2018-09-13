@@ -1,0 +1,28 @@
+<view class="bg">
+
+    <view class='topimage'>
+        <image src='/assets/envelopes/topimage.png' />
+    </view>
+
+    <view class='userhead'>
+        <image src='{{userinfo.avatarUrl || "/assets/envelopes/kairedbao.png"}}' />
+    </view>
+
+    <view class='username'>{{userinfo.nickName || "用户没有名称"}}</view>
+    <view class='fatchoi'>恭喜发财，大吉大利</view>
+    <view class='usermoney'>{{userGetRedNum}}</view>
+    <view class='account'>已存入账户，立即提现</view>
+    <view class='continue' bindtap='continueChalleg'>继续挑战</view>
+    <view class='checkmoney' bindtap='CheckTheReward'>查看奖励</view>
+
+    <view class='envbotAd' wx:if="{{ifShowOneAd}}" bindtap='adClickEvent' data-adId='{{OneAd.id}}'>
+        <navigator wx:if="{{OneAd.type==1}}" target="miniProgram" open-type="navigate" app-id="{{OneAd.appid}}" path="/pages/index/index" extra-data="" version="release">
+            <image mode="aspectFill" src='{{OneAd.pic}}' />
+        </navigator>
+
+        <navigator wx:if="{{OneAd.type==2}}" url="/pages/webview/webview?url={{OneAd.link}}">
+            <image mode="aspectFill" src='{{OneAd.pic}}' />
+        </navigator>
+    </view>
+
+</view>

@@ -1,0 +1,43 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/usercenter/usercenter",
+        "pages/bonusList/bonusList",
+        "pages/player/player",
+        "pages/userEnvelopes/userEnvelopes",
+        "pages/withdraw/withdraw",
+        "pages/webview/webview",
+        "pages/thedetail/thedetail"
+    ],
+    "window": {
+        "backgroundTextStyle": "light"
+    },
+    "tabBar": {
+        "color": "#4D4D4D",
+        "selectedColor": "#E6931D",
+        "backgroundColor": "#fff",
+        "borderStyle": "black",
+        
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text":"猜歌挑战",
+                "iconPath":"/assets/index/pkicon.png",
+                "selectedIconPath":"/assets/index/pkselect.png"
+            },
+            {
+                "pagePath": "pages/bonusList/bonusList",
+                "text": "奖金榜",
+                "iconPath": "/assets/index/cupicon.png",
+                "selectedIconPath": "/assets/index/cupselect.png"
+            },
+            {
+                "pagePath": "pages/usercenter/usercenter",
+                "text": "个人中心",
+                "iconPath": "/assets/index/usercentericon.png",
+                "selectedIconPath": "/assets/index/userselect.png"
+            }
+        ]
+    },
+    "debug":true
+}

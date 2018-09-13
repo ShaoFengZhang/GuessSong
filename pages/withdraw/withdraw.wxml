@@ -1,0 +1,40 @@
+<view class="bg">
+
+    <view class='topbg'>
+        <view class='detial' bindtap='gotoDetial'>收支明细</view>
+    </view>
+
+    <view class='usermoneybox'>
+        <view class='thetext'>我的余额</view>
+        <view class='userdoller'>￥{{userbalance}}</view>
+        <view class='internum' wx:if="{{showinput}}">
+            <input type='digit' maxlength="6" placeholder="￥ 请输入要提现的金额" placeholder-class="inputplace" value='{{inputvalue}}' bindinput="getinputvalue" bindfocus="inputfocus"></input>
+            <text class='alldraw' bindtap='allwithdraw'>全部提现</text>
+        </view>
+        <view class='prompt'>提现金额将在1-5个工作日打到您的微信零钱当中</view>
+    </view>
+
+    <view class='drawbtn' bindtap='withdraw'>提现</view>
+
+    <view class='drawbotad' wx:if="{{ifShowOneAd}}" bindtap='adClickEvent' data-adId='{{OneAd.id}}'>
+        <navigator wx:if="{{OneAd.type==1}}" target="miniProgram" open-type="navigate" app-id="{{OneAd.appid}}" path="{{OneAd.link || '/pages/index/index'}}" extra-data="" version="release">
+            <image mode="aspectFill" src='{{OneAd.pic}}' />
+        </navigator>
+
+        <navigator wx:if="{{OneAd.type==2}}" url="/pages/webview/webview?url={{OneAd.link}}">
+            <image mode="aspectFill" src='{{OneAd.pic}}' />
+        </navigator>
+    </view>
+
+    <view class='deawADBox' bindtap='deawAdClick' wx:if="{{showADBox}}">
+
+        <navigator wx:if="{{TwoAd.type==1}}" target="miniProgram" open-type="navigate" app-id="{{TwoAd.appid}}" path="{{TwoAd.link || '/pages/index/index'}}" extra-data="" version="release">
+            <image mode="aspectFill" src='{{TwoAd.pic}}' />
+        </navigator>
+
+        <navigator wx:if="{{TwoAd.type==2}}" url="/pages/webview/webview?url={{TwoAd.link}}">
+            <image mode="aspectFill" src='{{TwoAd.pic}}' />
+        </navigator>
+    </view>
+
+</view>

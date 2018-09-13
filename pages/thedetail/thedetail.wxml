@@ -1,0 +1,15 @@
+<view class="bg">
+    <scroll-view scroll-y style="height: 100%;" wx:if="{{award_list.length}}" >
+        <view class='listitem'  wx:for="{{award_list}}" wx:key="index">
+            <view class='listtop'>
+                <view class='username'>{{item.typeDesc}}</view>
+                <view class='itemnumber'>
+                    <text class='year'>{{item.year}}</text>
+                    <text class='time'>{{item.time}}</text>
+                    <text class='money' wx:if="{{item.type!=3}}">+{{item.amount}}</text>
+                    <text class='money' wx:if="{{item.type==3}}">-{{item.amount}}</text>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>

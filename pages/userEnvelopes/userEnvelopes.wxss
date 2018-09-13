@@ -1,0 +1,83 @@
+.bg {
+    position: relative;
+    overflow: hidden;
+}
+
+.topimage image, .topimage {
+    width: 750rpx;
+    height: 108rpx;
+}
+
+.userhead image, .userhead {
+    width: 132rpx;
+    height: 132rpx;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+
+.userhead {
+    border: 6rpx solid #66349c;
+    margin-top: -70rpx;
+}
+
+.username {
+    width: 100%;
+    text-align: center;
+    color: #363636;
+    margin-top: 26rpx;
+    font-size: 40rpx;
+    font-weight: 600;
+}
+
+.fatchoi {
+    text-align: center;
+    font-size: 24rpx;
+    color: #666;
+    margin-top: 24rpx;
+}
+
+.usermoney {
+    text-align: center;
+    font-size: 100rpx;
+    color: #ec3f17;
+    font-weight: 700;
+}
+
+.account {
+    text-align: center;
+    font-size: 30rpx;
+    color: #66349c;
+    margin-top: 10rpx;
+}
+
+.continue,.checkmoney{
+    width: 530rpx;
+    height: 90rpx;
+    background: rgba(102, 52, 156, 1);
+    border-radius: 45rpx;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 48rpx;
+    color: #fff;
+    line-height: 90rpx;
+    margin-top: 50rpx;
+}
+
+.checkmoney {
+    background: rgba(255, 255, 255, 1);
+    color: #66349C;
+    box-sizing: border-box;
+    border: 4rpx solid #66349C;
+}
+
+.envbotAd image{
+    width: 750rpx;
+    height: 180rpx;
+}
+
+.envbotAd{
+    width: 750rpx;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}

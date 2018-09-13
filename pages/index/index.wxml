@@ -1,0 +1,180 @@
+<view class="bg">
+
+    <scroll-view scroll-y style="height: 100vh">
+
+        <view class='guize' bindtap='switchRuleMask'>规则</view>
+        <view class='collectionBox' bindtap='collectionOur'>
+            <image src='/assets/index/collection.png' />
+        </view>
+
+        <view class='userinfo'>
+            <view class="usericon">
+                <open-data type="userAvatarUrl"></open-data>
+            </view>
+
+            <image class='iconbox' src='/assets/index/usericon.png' />
+
+            <button open-type="share" id="topShare"></button>
+        </view>
+
+        <view class='topicon'>
+            <image src='/assets/index/topicon.png' />
+        </view>
+
+        <view class='topruletext'>连续猜对{{questionNum || 0}}首歌，奖励现金红包1个</view>
+
+        <view class='startBtn'>
+            <form bindsubmit="startGame" report-submit class='scroleft'>
+                <button id='formID' formType="submit" style="background:{{teamOne}}">
+                    <image src='/assets/index/startBtn.png' bindtap='startGame' />
+                </button>
+            </form>
+
+            <button id='starbutton' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="getUserInfo" wx:if="{{!hasUserInfo}}"></button>
+        </view>
+
+        <view class='adindexthree' wx:if="{{ifShowThreeAd}}" bindtap='adClickEvent' data-adId='{{ThreeAdData.id}}'>
+            <navigator wx:if="{{ThreeAdData.type==1}}" class='AdThreeNav' target="miniProgram" open-type="navigate" app-id="{{ThreeAdData.appid}}" path="{{ThreeAdData.link || '/pages/index/index'}}" extra-data="" version="release">
+                <image src='{{ThreeAdData.pic}}' />
+            </navigator>
+
+            <navigator class='AdThreeNav' wx:if="{{ThreeAdData.type==2}}" url="/pages/webview/webview?url={{ThreeAdData.link}}">
+                <image mode="aspectFill" src='{{ThreeAdData.pic}}' />
+            </navigator>
+        </view>
+
+        <view class='threeADbox'>
+            <view bindtap='adClickEvent' data-adId='{{FourAdData.id}}' wx:if="{{ifShowFourAd}}">
+                <navigator wx:if="{{ifShowFourAd}}" wx:if="{{FourAdData.type==1}}" class='AdThreeBoxNav' target="miniProgram" open-type="navigate" app-id="{{FourAdData.appid}}" path="{{FourAdData.link || '/pages/index/index'}}" extra-data="" version="release">
+                    <image mode="aspectFill" src='{{FourAdData.pic}}' />
+                </navigator>
+
+                <navigator wx:if="{{ifShowFourAd}}" class='AdThreeBoxNav' wx:if="{{FourAdData.type==2}}" url="/pages/webview/webview?url={{FourAdData.link}}">
+                    <image mode="aspectFill" src='{{FourAdData.pic}}' />
+                </navigator>
+            </view>
+
+            <view bindtap='adClickEvent' data-adId='{{FiveAdData.id}}' wx:if="{{ifShowFiveAd}}">
+                <navigator wx:if="{{ifShowFiveAd}}" wx:if="{{FiveAdData.type==1}}" class='AdThreeBoxNav' target="miniProgram" open-type="navigate" app-id="{{FiveAdData.appid}}" path="{{FiveAdData.link || '/pages/index/index'}}" extra-data="" version="release">
+                    <image mode="aspectFill" src='{{FiveAdData.pic}}' />
+                </navigator>
+
+                <navigator class='AdThreeBoxNav' wx:if="{{ifShowFiveAd}}" wx:if="{{FiveAdData.type==2}}" url="/pages/webview/webview?url={{FiveAdData.link}}">
+                    <image mode="aspectFill" src='{{FiveAdData.pic}}' />
+                </navigator>
+            </view>
+
+            <view bindtap='adClickEvent' data-adId='{{SixAdData.id}}' wx:if="{{ifShowSixAd}}">
+                <navigator wx:if="{{ifShowSixAd}}" wx:if="{{SixAdData.type==1}}" class='AdThreeBoxNav' target="miniProgram" open-type="navigate" app-id="{{SixAdData.appid}}" path="{{SixAdData.link || '/pages/index/index'}}" extra-data="" version="release">
+                    <image mode="aspectFill" src='{{SixAdData.pic}}' />
+                </navigator>
+
+                <navigator class='AdThreeBoxNav' wx:if="{{ifShowSixAd}}" wx:if="{{SixAdData.type==2}}" url="/pages/webview/webview?url={{SixAdData.link}}">
+                    <image mode="aspectFill" src='{{SixAdData.pic}}' />
+                </navigator>
+            </view>
+        </view>
+
+        <view class='dynamicAdvice'>
+
+            <view class='adbotmbox' bindtap='adClickEvent' data-adId='{{item.adShowList[0].id}}' wx:for="{{elasticArr}}" wx:key="index" wx:if="{{item.display==1}}">
+
+                <navigator wx:if="{{item.adShowList[0].type==1}}" class='dynamicAdviceNav' target="miniProgram" open-type="navigate" app-id="{{item.adShowList[0].appid}}" path="{{item.adShowList[0].link || '/pages/index/index'}}" extra-data="" version="release">
+                    <image mode="aspectFill" src='{{item.adShowList[0].pic}}' />
+                </navigator>
+
+                <navigator class='dynamicAdviceNav' wx:if="{{item.adShowList[0].type==2}}" url="/pages/webview/webview?url={{item.adShowList[0].link}}">
+                    <image mode="aspectFill" src='{{item.adShowList[0].pic}}' />
+                </navigator>
+            </view>
+
+        </view>
+
+        <ad unit-id="adunit-152f497c8316c72f" style="margin-top:20rpx"></ad>
+
+    </scroll-view>
+
+    <view class='pullnewbox' wx:if="{{ifshowla==2}}">
+        <image src='/assets/index/pullnew.png' />
+        <view class='pullnewboxtext'>{{pullnew}}</view>
+    </view>
+
+    <view class='adonebox' bindtap='adClickEvent' wx:if="{{ifShowOneAd}}" data-adId='{{OneAdData.id}}'>
+
+        <navigator wx:if="{{OneAdData.type==1}}" target="miniProgram" open-type="navigate" app-id="{{OneAdData.appid}}" path="{{OneAdData.link || '/pages/index/index'}}" extra-data="" version="release">
+            <image mode="aspectFill" src='{{OneAdData.pic}}' />
+        </navigator>
+
+        <navigator wx:if="{{OneAdData.type==2}}" url="/pages/webview/webview?url={{OneAdData.link}}">
+            <image mode="aspectFill" src='{{OneAdData.pic}}' />
+        </navigator>
+
+    </view>
+
+    <view class='adtwobox breath' bindtap='adClickEvent' wx:if="{{ifShowTwoAd}}" data-adId='{{TwoAdData.id}}'>
+
+        <navigator wx:if="{{TwoAdData.type==1}}" target="miniProgram" open-type="navigate" app-id="{{TwoAdData.appid}}" path="{{TwoAdData.link || '/pages/index/index'}}" extra-data="" version="release">
+            <image mode="aspectFill" src='{{TwoAdData.pic}}' />
+        </navigator>
+
+        <navigator wx:if="{{TwoAdData.type==2}}" url="/pages/webview/webview?url={{TwoAdData.link}}">
+            <image mode="aspectFill" src='{{TwoAdData.pic}}' />
+        </navigator>
+
+    </view>
+
+    <!--规则弹窗  -->
+    <view class='ruleMask' wx:if="{{ifShowRuleMask}}">
+        <view class='ruleContent'>
+
+            <view class='closeimg' bindtap='switchRuleMask'>
+                <image src='/assets/index/closeBtn.png' />
+            </view>
+
+            <scroll-view scroll-y style="height:500rpx ">
+                <image class='ruleimg' src='{{ruleimg}}' mode='widthFix' />
+            </scroll-view>
+
+
+            <button class='contactBtn' open-type="contact">立即联系</button>
+        </view>
+    </view>
+
+    <!--挑战机会不足弹窗  -->
+    <view class=' ruleMask nochanceMask' wx:if="{{ifshowNochanceMask}}">
+        <view class='ruleContent' style='height:506rpx'>
+            <view class='nochancetitle'>
+                <image class='nochancecloseimg' src='/assets/index/closeBtn.png' bindtap='closeNoChanceMask' />
+                <image class='nochanceicon' src='/assets/index/nochanceicon.png' />
+            </view>
+
+            <!-- <view class='insufficient'>挑战机会不足</view> -->
+
+            <!-- <view class='getchanceText'>先去获得一些挑战机会吧！</view> -->
+
+            <button open-type="share" id='nochancebtn'>约朋友一起玩</button>
+        </view>
+    </view>
+
+    <!--每日登录领去奖励弹窗  -->
+    <view class='ruleMask loginMask' wx:if="{{ifShowLoginRule}}">
+        <view class='ruleContent'>
+            <view class='loginicontitle'>
+                <image class='loginicon' src='/assets/index/login.png' />
+            </view>
+
+            <view class='insufficient' style='color:#292929;'>每日登陆奖励</view>
+
+            <view class='getchanceText' style='color:#F19149;'>挑战机会+1</view>
+
+            <view class='toReceive' bindtap='toReceive'>领取</view>
+        </view>
+    </view>
+
+    <!-- 操作只是弹窗 -->
+    <view class='instructionsBox' wx:if="{{showZhishi}}" bindtap='hideinstructionsBox'>
+        <image src='/assets/index/android.png' wx:if="{{android}}" />
+        <image src='/assets/index/ios.png' wx:if="{{ios}}" />
+    </view>
+
+</view>

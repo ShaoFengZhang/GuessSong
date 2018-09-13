@@ -1,0 +1,380 @@
+.bg {
+    background-image: url('https://www.vryzy.cn/storage/web/indexbg1.png');
+    position: relative;
+}
+
+.pullnewbox {
+    position: absolute;
+    top: 380rpx;
+    right: 0;
+}
+
+.pullnewbox image, .pullnewbox {
+    width: 150rpx;
+    height: 150rpx;
+}
+
+.pullnewboxtext {
+    width: 100%;
+    height: 20rpx;
+    position: absolute;
+    bottom: 52rpx;
+    left: 0rpx;
+    font-size: 26rpx;
+    text-align: center;
+}
+
+.adonebox image, .adtwobox image {
+    width: 150rpx;
+    height: 150rpx;
+}
+
+.adonebox, .adtwobox {
+    position: absolute;
+    top: 200rpx;
+}
+
+.adonebox {
+    top: 200rpx;
+    left: 30rpx;
+    animation: adonebox 0.5s ease-in-out infinite;
+}
+
+.adtwobox {
+    /* animation: adonebox 0.5s ease-in-out infinite;  */
+}
+
+@keyframes adonebox {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(20deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.adtwobox {
+    right: 30rpx;
+}
+
+.topicon image, .topicon {
+    width: 331rpx;
+    height: 386rpx;
+    margin: 0 auto;
+}
+
+.topruletext {
+    width: 100%;
+    text-align: center;
+    font-size: 30rpx;
+    color: rgba(57, 57, 57, 1);
+    margin-top: 2.2vh;
+}
+
+.startBtn {
+    margin: 2.2vh auto 0;
+    position: relative;
+}
+
+.startBtn image, .startBtn {
+    width: 514rpx;
+    height: 115rpx;
+}
+
+#formID {
+    width: 514rpx;
+    height: 115rpx;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0;
+}
+
+.startBtn #starbutton {
+    width: 514rpx;
+    height: 115rpx;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    margin-top: 0;
+    opacity: 0;
+}
+
+.adindexthree {
+    margin: 3.4vh auto 0;
+    position: relative;
+}
+
+.adindexthree, .adindexthree image, .AdThreeNav {
+    width: 514rpx;
+    height: 106rpx;
+}
+
+.threeADbox {
+    width: 100%;
+    /* height: 120rpx; */
+    padding: 0 66rpx;
+    box-sizing: border-box;
+    margin-top: 2.9vh;
+    display: flex;
+    justify-content: space-around;
+}
+
+.threeADbox image, .AdThreeBoxNav {
+    width: 170rpx;
+    height: 120rpx;
+    border-radius: 18rpx;
+}
+
+.dynamicAdvice {
+    margin-top: 3.5vh;
+}
+
+.dynamicAdvice image, .dynamicAdviceNav {
+    width: 750rpx;
+    height: 180rpx;
+    margin-top: 10rpx;
+}
+
+.ruleMask {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.46);
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.closeimg {
+    width: 38rpx;
+    height: 38rpx;
+    position: absolute;
+    top: 20rpx;
+    right: 30rpx;
+    z-index: 10;
+}
+
+.ruleMask .closeimg image {
+    width: 38rpx;
+    height: 38rpx;
+}
+
+.ruleimg {
+    width: 100%;
+    /* height: 750rpx; */
+    float: right;
+}
+
+.ruleContent {
+    width: 568rpx;
+    height: 686rpx;
+    background-color: rgba(255, 254, 246, 1);
+    margin: 15vh auto 0;
+    border-radius: 18rpx;
+    box-sizing: border-box;
+    padding-top: 10rpx;
+    position: relative;
+}
+
+.nochanceMask {
+    padding: 40rpx 0 0 0;
+}
+
+.nochancecloseimg {
+    width: 38rpx;
+    height: 38rpx;
+    position: absolute;
+    top: 10rpx;
+    right: 10rpx;
+}
+
+/* .title {
+    height: 40rpx;
+    line-height: 40rpx;
+    text-align: center;
+    font-size: 40rpx;
+    color: #ff8a65;
+    margin-bottom: 46rpx;
+}
+
+.ruleContent .text {
+    font-size: 24rpx;
+    color: #2b2b2a;
+    text-align: left;
+    margin-bottom: 14rpx;
+    overflow: hidden;
+}
+
+.ruleContent .sorting {
+    display: inline-block;
+    width: 40rpx;
+    height: 40rpx;
+    font-size: 30rpx;
+    color: #fff;
+    text-align: center;
+    background-color: #f19149;
+    border-radius: 50%;
+}
+
+.ruletext {
+    width: 430rpx;
+    float: right;
+}
+
+.customer {
+    width: 270rpx;
+    height: 38rpx;
+    font-size: 24rpx;
+    font-family: PingFang-SC-Medium;
+    color: rgba(241, 145, 73, 1);
+    line-height: 38rpx;
+    margin: 0 auto;
+    border-bottom: 2rpx solid #f19149;
+} */
+
+.contactBtn, button {
+    width: 278rpx;
+    height: 79rpx;
+    background: rgba(241, 145, 73, 1);
+    border-radius: 38rpx;
+    text-align: center;
+    line-height: 79rpx;
+    margin-top: 46rpx;
+}
+
+scroll-view {
+    position: relative;
+}
+
+.guize {
+    width: 90rpx;
+    height: 36rpx;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 18rpx;
+    font-size: 24rpx;
+    color: rgba(254, 253, 253, 1);
+    text-align: center;
+    position: absolute;
+    top: 10rpx;
+    right: 26rpx;
+    line-height: 36rpx;
+}
+
+.nochancetitle {
+    position: relative;
+    margin-bottom: none;
+    margin-top: 0rpx;
+    overflow: hidden;
+}
+
+.insufficient {
+    width: 100%;
+    text-align: center;
+    color: #f19149;
+    font-size: 36rpx;
+    margin-top: 34rpx;
+}
+
+image.nochanceicon {
+    display: block;
+    width: 355rpx;
+    height: 347rpx;
+    margin: 0 auto;
+}
+
+.getchanceText {
+    width: 100%;
+    text-align: center;
+    font-size: 30rpx;
+    color: #323232;
+    line-height: 38rpx;
+    margin-top: 38rpx;
+}
+
+#nochancebtn, .toReceive {
+    width: 400rpx;
+    height: 70rpx;
+    background: rgba(241, 145, 73, 1);
+    border-radius: 35rpx;
+    font-size: 30rpx;
+    color: rgba(254, 254, 254, 1);
+    line-height: 70rpx;
+    margin: 0 auto;
+    margin-top: 46rpx;
+    text-align: center;
+}
+
+image.loginicon, .loginicontitle {
+    width: 366rpx;
+    height: 318rpx;
+    margin: 0 auto;
+}
+
+.userinfo {
+    margin-left: 70rpx;
+    position: absolute;
+}
+
+.iconbox, .userinfo {
+    width: 100rpx;
+    height: 188rpx;
+}
+
+.iconbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.usericon {
+    width: 96rpx;
+    height: 96rpx;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: 0rpx;
+    left: 0rpx;
+    border: 2rpx solid rgb(129, 199, 132);
+}
+
+#topShare {
+    width: 80rpx;
+    height: 100rpx;
+    position: absolute;
+    top: 40rpx;
+    left: 10rpx;
+    background: none;
+}
+
+.instructionsBox{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color:rgba(0,0,0,0.6);
+}
+
+.instructionsBox image{
+    width: 632rpx;
+    height: 960rpx;
+    position: absolute;
+    top: 12rpx;
+    left: 87rpx;
+}
+
+.collectionBox,.collectionBox image{
+    width: 124rpx;
+    height: 106rpx;
+}
+
+.collectionBox{
+    position: absolute;
+    right: 20rpx;
+    top: 80rpx;
+}

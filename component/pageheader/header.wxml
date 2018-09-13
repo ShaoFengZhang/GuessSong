@@ -1,0 +1,7 @@
+<view class="top-mask">
+    <view class="backBox"  catchtap="backPage" >
+        <image src="/assets/navback.png"/>
+    </view>
+   
+    <view class="title">{{message}}</view>
+</view>

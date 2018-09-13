@@ -1,0 +1,203 @@
+.bg {
+    background-image: url('https://www.vryzy.cn/storage/web/playerbg.png');
+    position: relative;
+    overflow: hidden;
+}
+
+.userinfo {
+    width: 100%;
+    height: 396rpx;
+    background: #4d138c;
+}
+
+.userbase {
+    width: 100%;
+    height: 271rpx;
+    padding-top: 24rpx;
+    box-sizing: border-box;
+}
+
+.usermoney {
+    width: 100%;
+    height: 125rpx;
+    background-color: rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.useravatar image, .useravatar {
+    width: 150rpx;
+    height: 150rpx;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.username {
+    width: 100%;
+    text-align: center;
+    color: #f9f9f9;
+    font-size: 31rpx;
+    margin-top: 30rpx;
+}
+
+.usertext, .userdollernum {
+    width: 100%;
+    text-align: center;
+    color: #f9f9f9;
+    font-size: 30rpx;
+}
+
+.userdollernum {
+    font-size: 26rpx;
+    margin-top: 10rpx;
+}
+
+.chancenum, .totalbonus, .rednum {
+    border-right: 2rpx solid rgba(255, 255, 255, 0.3);
+    flex-grow: 1;
+}
+
+.rednum {
+    border-right: none;
+}
+
+.recordbox {
+    width: 690rpx;
+    /* height: 474rpx; */
+    margin: 3vh auto 0;
+    background-color: #fff;
+    border-radius: 30rpx;
+}
+
+.recordtxt {
+    width: 100%;
+    height: 84rpx;
+    text-align: center;
+    color: #cb1ac5;
+    font-size: 25rpx;
+    line-height: 84rpx;
+}
+
+.recordlist {
+    width: 100%;
+    /* height: 390rpx; */
+    background: rgba(246, 249, 250, 1);
+    border-radius: 30rpx;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.recordlist image {
+    display: block;
+    width: 364rpx;
+    height: 302rpx;
+    margin: 20rpx auto 0;
+}
+
+.nonumtxt {
+    width: 100%;
+    text-align: center;
+    color: #6d6d6d;
+    font-size: 24rpx;
+    margin-top: 24rpx;
+}
+
+.listbotad {
+    width: 750rpx;
+    /* height: 180rpx; */
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.listbotad image {
+    width: 750rpx;
+    height: 180rpx;
+}
+
+.listitem {
+    width: 100%;
+    height: 142rpx;
+    padding: 20rpx 0rpx 0 30rpx;
+     box-sizing: border-box; 
+    overflow: hidden;
+}
+
+.listtop{
+    width:100%;
+    padding-right: 46rpx;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+
+.point, .itemnumber {
+    display:  inline-flex;
+    justify-content: space-between;
+}
+
+.itemnumber{
+    height: 28rpx;
+    line-height: 28rpx;
+     flex-grow:1;
+}
+
+.point {
+    width: 18rpx;
+    height: 18rpx;
+    border-radius: 50%;
+    background-color: rgba(151, 195, 255, 1);
+    margin-right: 32rpx;
+}
+
+.year {
+    color: #1b1c20;
+    font-size: 28rpx;
+    font-weight: 600;
+}
+
+.time {
+    color: #4a4d57;
+    font-size: 24rpx;
+}
+
+.money {
+    color: #f73d0b;
+    font-size: 36rpx;
+}
+
+.itemflag{
+    width: 100%;
+    padding-right: 30rpx;
+    overflow: hidden;
+    padding-left: 54rpx;
+    box-sizing: border-box;
+}
+
+.tiaozhan {
+    float: left;
+    font-size: 24rpx;
+    color: rgba(74, 77, 87, 1);
+    line-height: 55rpx;
+}
+
+.liji {
+    float: right;
+    font-size: 24rpx;
+    color:rgba(247,61,11,1);
+    line-height: 55rpx;
+}
+
+.line{
+    width: 100%;
+    height: 4rpx;
+    background-color: rgba(225,225,225,1);
+}
+
+.tecentAD{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}

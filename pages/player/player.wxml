@@ -1,0 +1,131 @@
+<view class="bg">
+
+    <view class='playerpagebox' wx:if="{{ifshowbg}}">
+        <view class='musicName'>
+            <image src='/assets/player/musicName.png' />
+            <view class='Mnametex'>第{{current_step}}题</view>
+        </view>
+
+        <view class='cdcontainer'>
+
+            <view class="circleProgress_wrapper">
+                <view class="wrapper right">
+                    <view class="circleProgress  {{RightplayAniLength}}"></view>
+                </view>
+                <image class='cddisc {{cddiscani}}' src='/assets/player/disc.png' />
+                <view class="wrapper left">
+                    <view class="circleProgress  {{LeftplayAniLength}}"></view>
+                </view>
+            </view>
+
+            <view class='Pointer'>
+                <image animation="{{PointerAnimation}}" class='pointerani' src='/assets/player/Pointer.png' />
+                <image src='/assets/player/smallbut.png' class='smallbut' />
+            </view>
+
+            <view class='waves {{wavesani}}'>
+                <image src='/assets/player/waves.png' />
+            </view>
+
+        </view>
+
+        <view class='answer'>
+            <view class='answerA' wx:for="{{answerArr}}" wx:key="index" bindtap='{{chooseanswer}}' data-answerindex='{{item.key}}' data-answer='{{item.value}}' data-index="{{index}}" style=' background:{{answerbgColor[index]}}'>
+                {{item.value}}
+                <view class='flagicon'>
+                    <image src='/assets/player/victory.png' wx:if="{{answerOKIcon[index]}}" />
+                    <image src='/assets/player/error.png' wx:if="{{answerERRORIcon[index]}}" />
+                </view>
+            </view>
+        </view>
+
+        <view class='botText'>答对{{questionNum || 0}}题即挑战成功！</view>
+    </view>
+
+    <view class='playerMask' wx:if="{{ifplaymask}}">
+
+        <view class='maskCenter'>
+            <view class='expression'>
+                <image src='{{answerflg.expression}}' />
+            </view>
+
+            <view class='partition' wx:if="{{!answerflg.ifShowDraw}}" />
+            <view class='drawpartition' wx:if="{{answerflg.ifShowDraw}}" />
+
+            <view class='contentbox' wx:if="{{!answerflg.ifShowDraw}}">
+                <view class='answerFlag' style='color:{{answerflg.textcolor}}'>
+                    {{answerflg.answerflg}}
+                </view>
+
+                <view class='maskCdBox'>
+                    <image class='discImg' src='/assets/player/disc.png' />
+                    <image class='cdcireImg' src='/assets/player/cdcire.png' />
+                    <image class='playerbtnImg' src='/assets/mask/playerbtn.png' />
+                </view>
+
+                <view class='songName'>
+                    {{answerflg.songName}}
+                </view>
+
+            </view>
+
+            <view class='contentbox' wx:if="{{answerflg.ifShowDraw}}">
+
+                <view class='maskCdBox'>
+                    <image class='drawIcon' src='/assets/mask/drawicon.png' />
+                </view>
+
+                <view class='drawtext'>
+                    {{answerflg.songName}}
+                </view>
+
+            </view>
+
+            <view class='botBtn' bindtap='{{answerflg.masktap}}'>
+                {{answerflg.btntext}}
+            </view>
+
+
+        </view>
+
+        <view class='maskad' bindtap='adClickEvent' wx:if="{{ifshowmaskErrorAD && ifshowmaskAd}}" data-adId='{{ErrorAd.id}}' data-addchance='{{answerflg.add}}'>
+
+            <navigator wx:if="{{ErrorAd.type==1}}" target="miniProgram" open-type="navigate" app-id="{{ErrorAd.appid}}" path="{{ErrorAd.link || '/pages/index/index'}}" extra-data="" version="release">
+                <image mode="aspectFill" src='{{ErrorAd.pic}}' />
+            </navigator>
+
+            <navigator wx:if="{{ErrorAd.type==2}}" url="/pages/webview/webview?url={{ErrorAd.link}}">
+                <image mode="aspectFill" src='{{ErrorAd.pic}}' />
+            </navigator>
+
+        </view>
+
+    </view>
+
+    <view class='redBaoBox' wx:if="{{ifShowGetRedBao}}">
+
+        <view class='guang'>
+            <image class='guangIcon breath' src='/assets/mask/guang.png'/>
+            <view class='getRedBao' bindtap='gotoEnvelopes'>
+                <view class='userName'>{{userinfo.nickName || "未获取昵称"}}</view>
+                <image class='redBao' src='/assets/mask/redbao.png' />
+                <image class='kairedBao' src='/assets/mask/kairedbao.png' />
+                <image class='usericon' src='{{userinfo.avatarUrl}}' />
+            </view>
+        </view>
+
+
+        <view class='redBaoAdbox' wx:if="{{ifShowNoticetAd}}" bindtap='adClickEvent' data-adId='{{noticetAd.id}}'>
+            <navigator wx:if="{{noticetAd.type==1}}" target="miniProgram" open-type="navigate" app-id="{{noticetAd.appid}}" path="{{noticetAd.link || '/pages/index/index'}}" extra-data="" version="release">
+                <image mode="aspectFill" src='{{noticetAd.pic}}' />
+            </navigator>
+
+            <navigator wx:if="{{noticetAd.type==2}}" url="/pages/webview/webview?url={{noticetAd.link}}">
+                <image mode="aspectFill" src='{{noticetAd.pic}}' />
+            </navigator>
+        </view>
+    </view>
+
+    <view class='readyani' animation="{{readyAnimation}}">Ready</view>
+
+</view>

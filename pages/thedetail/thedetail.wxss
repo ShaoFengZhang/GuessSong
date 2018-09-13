@@ -1,0 +1,34 @@
+.bg {
+    position: relative;
+    overflow: hidden;
+    border-top: 2rpx solid #aaa;
+}
+
+.listitem {
+    width: 750rpx;
+    height: 134rpx;
+    border-bottom: 2rpx solid #aaa;
+    padding: 26rpx 32rpx;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.username {
+    width: 100%;
+    font-size: 30rpx;
+    color: rgba(0, 0, 0, 1);
+}
+
+.year, .time {
+    font-size: 24rpx;
+    color: rgba(0, 0, 0, 1);
+    margin-right: 22rpx;
+}
+
+.money {
+    font-size: 36rpx;
+    color: rgba(250, 6, 52, 1);
+    position: absolute;
+    top: 52rpx;
+    right: 32rpx;
+}

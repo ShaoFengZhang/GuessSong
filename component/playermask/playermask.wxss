@@ -1,0 +1,134 @@
+.playerMask {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.maskCenter {
+    width: 600rpx;
+    height: 700rpx;
+    margin: 10vh auto 0;
+    background-color: #fff;
+    position: relative;
+    border-radius: 30rpx 30rpx 0 0;
+}
+
+.expression, .expression image {
+    width: 148rpx;
+    height: 148rpx;
+}
+
+.expression {
+    position: absolute;
+    left: 226rpx;
+    top: -74rpx;
+}
+
+.partition {
+    width: 100%;
+    height: 92rpx;
+}
+
+.drawpartition {
+    width: 100%;
+    height: 50rpx;
+}
+
+.answerFlag {
+    font-size: 40rpx;
+    text-align: center;
+}
+
+.maskCdBox {
+    width: 258rpx;
+    margin: 36rpx auto 0;
+    position: relative;
+}
+
+.discImg {
+    width: 258rpx;
+    height: 258rpx;
+}
+
+.cdcireImg {
+    width: 117rpx;
+    height: 117rpx;
+    position: absolute;
+    top: 71rpx;
+    left: 71rpx;
+}
+
+.drawIcon {
+    width: 295rpx;
+    height: 291rpx;
+    /* border: 2rpx dashed gray; */
+}
+
+.drawtext {
+    width: 252rpx;
+    color: #313131;
+    font-size: 36rpx;
+    text-align: center;
+    margin: 10rpx auto 0;
+    line-height: 70rpx;
+}
+
+.playerbtnImg {
+    width: 68rpx;
+    height: 68rpx;
+    position: absolute;
+    top: 98rpx;
+    left: 98rpx;
+}
+
+.songName {
+    /* width: 300rpx; */
+    /* margin: 0 auto; */
+    text-align: center;
+    color: #1e1e1e;
+    font-size: 36rpx;
+    margin-top: 32rpx;
+}
+
+.botBtn{
+    width: 280rpx;
+    height: 70rpx;
+    margin: 42rpx auto 0;
+    border-radius: 70rpx;
+    background: linear-gradient(to right, #ad64f3, #7977fc);
+    text-align: center;
+    line-height: 70rpx;
+    color: #fff;
+    position: relative;
+}
+
+.maskad,.maskad image{
+    width: 600rpx;
+    height: 180rpx;
+    margin: 0 auto;
+    border-radius: 0 0 30rpx 30rpx;
+    position: relative;
+}
+
+navigator{
+    width: 600rpx;
+    height: 180rpx;
+    /* opacity: 0; */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.getchanceBtn{
+    width: 280rpx;
+    height: 70rpx;
+    border-radius: 70rpx;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}

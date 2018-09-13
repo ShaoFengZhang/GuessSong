@@ -1,0 +1,80 @@
+<view class="bg">
+    <view class='userinfo'>
+        <view class='userbase'>
+            <view class='useravatar'>
+                <!-- <image src='{{userInfo.avatarUrl || "/assets/index/nochanceicon.png"}}' /> -->
+                <open-data type="userAvatarUrl"></open-data>
+            </view>
+            <view class='username'>
+                <!-- {{userInfo.nickName || "未授权用户"}} -->
+                <open-data type="userNickName"></open-data>
+            </view>
+        </view>
+
+        <view class='usermoney'>
+            <view class='chancenum'>
+                <view class='usertext'>剩余次数</view>
+                <view class='userdollernum'>{{avtime || 0}}次</view>
+            </view>
+
+            <view class='totalbonus'>
+                <view class='usertext'>累计奖金</view>
+                <view class='userdollernum'>{{accumulative || "0.00"}}</view>
+            </view>
+
+            <view class='rednum'>
+                <view class='usertext'>获得红包</view>
+                <view class='userdollernum'>{{ award_number || 0}}个</view>
+            </view>
+        </view>
+
+    </view>
+
+    <view class='recordbox'>
+        <view class='recordtxt'>领奖记录</view>
+        <view class='recordlist' style='height:{{recordlistHeight}}'>
+
+            <view class='nonum' wx:if="{{!award_list.length}}">
+                <image src='/assets/usercenter/norecord.png' />
+                <view class='nonumtxt'>暂无数据</view>
+            </view>
+
+            <view class='numlist' style="height: 100%;">
+                <scroll-view scroll-y style="height: 100%;" wx:if="{{award_list.length}}">
+                    <view class='listitem' wx:for="{{award_list}}" wx:key="index">
+                        <view class='listtop'>
+                            <view class='point'></view>
+                            <view class='itemnumber'>
+                                <text class='year'>{{item.year}}</text>
+                                <text class='time'>{{item.time}}</text>
+                                <text class='money'>￥{{item.amount}}</text>
+                            </view>
+                        </view>
+
+                        <view class='itemflag'>
+                            <view class='tiaozhan'>{{item.typeDesc}}</view>
+                            <view class='liji' data-money='{{item.amount}}' bindtap='goWithdrawal'>立即提现 >> </view>
+                        </view>
+
+                        <view class='line'></view>
+                    </view>
+                </scroll-view>
+            </view>
+
+        </view>
+    </view>
+
+    <view class='listbotad'>
+        <view class='listbotadbox' wx:if="{{ifShowOneAd}}" bindtap='adClickEvent' data-adId='{{OneAd.id}}'>
+            <navigator wx:if="{{OneAd.type==1}}" target="miniProgram" open-type="navigate" app-id="{{OneAd.appid}}" path="{{OneAd.link || '/pages/index/index'}}" extra-data="" version="release">
+                <image mode="aspectFill" src='{{OneAd.pic}}' />
+            </navigator>
+
+            <navigator wx:if="{{OneAd.type==2}}" url="/pages/webview/webview?url={{OneAd.link}}">
+                <image mode="aspectFill" src='{{OneAd.pic}}' />
+            </navigator>
+        </view>
+    </view>
+
+    <ad unit-id="adunit-b51548ec5e6958e7" class="tecentAD"></ad>
+</view>
