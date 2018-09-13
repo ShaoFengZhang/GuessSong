@@ -175,7 +175,7 @@ Page({
         return {
             title: `${app.shareList[random].title}`,
             path: `pages/index/index?uid=${app.globalData.user_id}`,
-            imageUrl: `https://www.vryzy.cn/storage/${app.shareList[random].pic}`,
+            imageUrl: `${app.globalData.appUrl}storage/${app.shareList[random].pic}`,
             success: function(data) {
                 console.log("?????????????", data);
                 _this.setData({

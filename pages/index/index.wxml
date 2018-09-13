@@ -90,7 +90,7 @@
 
         </view>
 
-        <ad unit-id="adunit-152f497c8316c72f" style="margin-top:20rpx"></ad>
+        <!-- <ad unit-id="adunit-152f497c8316c72f" style="margin-top:20rpx"></ad> -->
 
     </scroll-view>
 

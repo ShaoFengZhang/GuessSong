@@ -40,5 +40,5 @@
             
         </view>    
     </view>
-    <ad unit-id="adunit-b50a453bc8dae4bc" class="tecentAD"></ad>
+    <!-- <ad unit-id="adunit-b50a453bc8dae4bc" class="tecentAD"></ad> -->
 </view>

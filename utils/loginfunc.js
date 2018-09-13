@@ -1,5 +1,5 @@
-const domin = "https://www.vryzy.cn/";
-const adDomin = "https://mp.vryzy.cn/";
+const domin = "https://xcx6.18yx.com/";
+const adDomin = "https://xcx7.18yx.com/";
 const LoginURl = `${domin}wx/user/login`;
 const checkUserUrl = `${domin}wx/user`;
 import md5 from './md5.js';

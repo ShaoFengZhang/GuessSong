@@ -129,7 +129,7 @@ Page({
         return {
             title: `${app.shareList[random].title}`,
             path: `pages/index/index?uid=${app.globalData.user_id}`,
-            imageUrl: `https://www.vryzy.cn/storage/${app.shareList[random].pic}`,
+            imageUrl: `${app.globalData.appUrl}storage/${app.shareList[random].pic}`,
         };
     },
 
@@ -293,7 +293,7 @@ Page({
             answerbgColor: ['linear-gradient(to right, #ad64f3, #7977fc)', 'linear-gradient(to right, #ad64f3, #7977fc)', 'linear-gradient(to right, #ad64f3, #7977fc)', 'linear-gradient(to right, #ad64f3, #7977fc)'],
         });
         let _this = this;
-        let assetsUrl = "https://www.vryzy.cn/storage/";
+        let assetsUrl = "${app.globalData.appUrl}storage/";
         let getAnswerTitleUrl = Loginfunc.domin + `wx/opp/question`;
         Loginfunc.requestURl(app, getAnswerTitleUrl, "POST", {}, function(data) {
             console.log('getAnswerTitleUrl', data);

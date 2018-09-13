@@ -76,5 +76,5 @@
         </view>
     </view>
 
-    <ad unit-id="adunit-b51548ec5e6958e7" class="tecentAD"></ad>
+    <!-- <ad unit-id="adunit-b51548ec5e6958e7" class="tecentAD"></ad> -->
 </view>

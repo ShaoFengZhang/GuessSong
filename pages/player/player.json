@@ -1,6 +1,6 @@
 {
     "navigationBarBackgroundColor": "#4D138C",
-    "navigationBarTitleText": "悟空猜歌",
+    "navigationBarTitleText": "听听猜猜",
     "navigationBarTextStyle": "white",
     "usingComponents": {
         "play-mask": "/component/playermask/playermask"

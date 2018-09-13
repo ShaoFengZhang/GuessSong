@@ -14,6 +14,7 @@ App({
     },
     globalData: {
         userInfo: null,
-        appid:"wxa081f758106e34c6",
+        appid:"wx8f1c6f7b898c15ac",
+        appUrl:'https://xcx6.18yx.com/'
     }
 })
