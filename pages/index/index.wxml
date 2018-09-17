@@ -1,5 +1,4 @@
 <view class="bg">
-
     <scroll-view scroll-y style="height: 100vh">
 
         <view class='guize' bindtap='switchRuleMask'>规则</view>
@@ -22,7 +21,6 @@
         </view>
 
         <view class='topruletext'>连续猜对{{questionNum || 0}}首歌，奖励现金红包1个</view>
-
         <view class='startBtn'>
             <form bindsubmit="startGame" report-submit class='scroleft'>
                 <button id='formID' formType="submit" style="background:{{teamOne}}">
@@ -94,6 +92,10 @@
 
     </scroll-view>
 
+    <view class='bottomBg'>
+        <image src='/assets/index/bottomBg.png' />
+    </view>
+
     <view class='pullnewbox' wx:if="{{ifshowla==2}}">
         <image src='/assets/index/pullnew.png' />
         <view class='pullnewboxtext'>{{pullnew}}</view>
@@ -144,7 +146,7 @@
     <view class=' ruleMask nochanceMask' wx:if="{{ifshowNochanceMask}}">
         <view class='ruleContent' style='height:506rpx'>
             <view class='nochancetitle'>
-                <image class='nochancecloseimg' src='/assets/index/closeBtn.png' bindtap='closeNoChanceMask' />
+                <!-- <image class='nochancecloseimg' src='/assets/index/closeBtn.png' bindtap='closeNoChanceMask' /> -->
                 <image class='nochanceicon' src='/assets/index/nochanceicon.png' />
             </view>
 
@@ -153,6 +155,9 @@
             <!-- <view class='getchanceText'>先去获得一些挑战机会吧！</view> -->
 
             <button open-type="share" id='nochancebtn'>约朋友一起玩</button>
+            <view class='closeimg' bindtap='closeNoChanceMask'>
+                <image src='/assets/index/closeBtn.png' />
+            </view>
         </view>
     </view>
 
@@ -165,14 +170,14 @@
 
             <view class='insufficient' style='color:#292929;'>每日登陆奖励</view>
 
-            <view class='getchanceText' style='color:#F19149;'>挑战机会+1</view>
+            <view class='getchanceText' style='color:#D66676;'>挑战机会+1</view>
 
-            <view class='toReceive' bindtap='toReceive'>领取</view>
+            <view class='toReceive' style='background-color:#D66676' bindtap='toReceive'>领取</view>
         </view>
     </view>
 
     <!-- 操作只是弹窗 -->
-    <view class='instructionsBox' wx:if="{{showZhishi}}" bindtap='hideinstructionsBox'>
+    <view class=' ruleMask instructionsBox' wx:if="{{showZhishi}}" bindtap='hideinstructionsBox'>
         <image src='/assets/index/android.png' wx:if="{{android}}" />
         <image src='/assets/index/ios.png' wx:if="{{ios}}" />
     </view>

@@ -40,9 +40,11 @@
         </view>
 
         <view class='botText'>答对{{questionNum || 0}}题即挑战成功！</view>
+
+
     </view>
 
-    <view class='playerMask' wx:if="{{ifplaymask}}">
+    <view class='playerMask' style='z-index:5;' wx:if="{{ifplaymask}}">
 
         <view class='maskCenter'>
             <view class='expression'>
@@ -59,7 +61,7 @@
 
                 <view class='maskCdBox'>
                     <image class='discImg' src='/assets/player/disc.png' />
-                    <image class='cdcireImg' src='/assets/player/cdcire.png' />
+                    <!-- <image class='cdcireImg' src='/assets/player/cdcire.png' /> -->
                     <image class='playerbtnImg' src='/assets/mask/playerbtn.png' />
                 </view>
 
@@ -102,14 +104,14 @@
 
     </view>
 
-    <view class='redBaoBox' wx:if="{{ifShowGetRedBao}}">
+    <view class='redBaoBox' style='z-index:5;' wx:if="{{ifShowGetRedBao}}">
 
         <view class='guang'>
-            <image class='guangIcon breath' src='/assets/mask/guang.png'/>
+            <image class='guangIcon breath' src='/assets/mask/guang.png' />
             <view class='getRedBao' bindtap='gotoEnvelopes'>
                 <view class='userName'>{{userinfo.nickName || "未获取昵称"}}</view>
                 <image class='redBao' src='/assets/mask/redbao.png' />
-                <image class='kairedBao' src='/assets/mask/kairedbao.png' />
+                <image class='kairedBao' src='/assets/mask/baoBtn.png' />
                 <image class='usericon' src='{{userinfo.avatarUrl}}' />
             </view>
         </view>
@@ -127,5 +129,9 @@
     </view>
 
     <view class='readyani' animation="{{readyAnimation}}">Ready</view>
+
+    <view class='bottomBg'>
+        <image src='/assets/index/bottomBg.png' />
+    </view>
 
 </view>

@@ -1,6 +1,6 @@
 let answerOK = {
     songName: '海阔天空',
-    textcolor: '#26A69A',
+    textcolor: '#8E86F5',
     answerflg: "回答正确",
     btntext: '下一首',
     expression: '/assets/mask/smile.png',

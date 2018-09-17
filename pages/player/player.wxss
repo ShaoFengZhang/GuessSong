@@ -1,7 +1,8 @@
 .bg {
-    background-image: url('https://xcx6.18yx.com/storage/web/playerbg.png');
+    /* background-image: url('https://xcx6.18yx.com/storage/web/playerbg.png'); */
     position: relative;
     overflow: hidden;
+    background: linear-gradient(to bottom, #864cfc, #d38ce8);
 }
 
 .readyani {
@@ -142,43 +143,44 @@ image.smallbut {
 }
 
 .getRedBao, .redBao {
-    width: 558rpx;
-    height: 728rpx;
+    width: 600rpx;
+    height: 830rpx;
 }
 
 .kairedBao {
-    width: 132rpx;
-    height: 132rpx;
+    width: 294rpx;
+    height: 82rpx;
     position: absolute;
-    bottom: 76rpx;
-    left: 213rpx;
+    bottom: 30rpx;
+    left: 152rpx;
 }
 
 .usericon {
-    width: 132rpx;
-    height: 132rpx;
+    /* width: 132rpx;
+    height: 132rpx; */
+    width: 166rpx;
+    height: 166rpx;
     border-radius: 50%;
     position: absolute;
-    top: 71rpx;
-    left: 213rpx;
+    top: 324rpx;
+    left: 76rpx;
 }
 
 .userName {
-    width: 100%;
+    width: 44%;
     color: #fefefe;
-    text-align: center;
+    text-align: left;
     font-size: 30rpx;
     position: absolute;
-    top: 236rpx;
-    left: 0;
+    top: 368rpx;
+    left: 270rpx;
 }
 
 .guang {
     width: 750rpx;
     height: 774rpx;
     position: relative;
-    margin:80rpx auto 0;
-
+    margin: 80rpx auto 0;
 }
 
 .guangIcon {
@@ -298,8 +300,10 @@ image.smallbut {
 }
 
 .drawIcon {
-    width: 295rpx;
-    height: 291rpx;
+    /* width: 295rpx;
+    height: 291rpx; */
+    width: 350rpx;
+    height: 280rpx;
     /* border: 2rpx dashed gray; */
 }
 
@@ -402,7 +406,8 @@ navigator {
 .circleProgress {
     width: 280rpx;
     height: 280rpx;
-    border: 10rpx solid rgb(232, 232, 12);
+    /* border: 10rpx solid rgb(232, 232, 12); */
+    border: 10rpx solid #e32b75;
     border-radius: 50%;
     position: absolute;
     top: 0;
@@ -410,16 +415,16 @@ navigator {
 }
 
 .rightcircle {
-    border-top: 10rpx solid green;
-    border-right: 10rpx solid green;
+    border-top: 10rpx solid #864cfc;
+    border-right: 10rpx solid #864cfc;
     right: 0;
     animation: circleProgressLoad_right 15s linear infinite;
     animation-fill-mode: forwards;
 }
 
 .leftcircle {
-    border-bottom: 10rpx solid green;
-    border-left: 10rpx solid green;
+    border-bottom: 10rpx solid #864cfc;
+    border-left: 10rpx solid #864cfc;
     left: 0;
     animation: circleProgressLoad_left 15s linear infinite;
     animation-fill-mode: forwards;
@@ -455,12 +460,12 @@ navigator {
 
 .pause {
     animation: none;
-    border: 10rpx solid green;
+    border: 10rpx solid #864cfc;
 }
 
 .pause2 {
     animation: none;
-    border: 10rpx solid green;
+    border: 10rpx solid #864cfc;
 }
 
 .redBaoBox {
@@ -481,7 +486,24 @@ navigator {
     bottom: 0;
 }
 
-.redBaoAdbox image{
+.redBaoAdbox image {
     width: 750rpx;
     height: 180rpx;
+}
+
+.bottomBg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.bottomBg, .bottomBg image {
+    width: 100%;
+    height: 366rpx;
+}
+
+.playerpagebox{
+    position: relative;
+    z-index: 5;
 }

@@ -1,11 +1,12 @@
 .bg {
-    background-image: url('https://xcx6.18yx.com/storage/web/indexbg1.png');
+    /* background-image: url('https://xcx6.18yx.com/storage/web/indexbg1.png'); */
     position: relative;
+    background: linear-gradient(to bottom, #864CFC , #D38CE8);
 }
 
 .pullnewbox {
     position: absolute;
-    top: 380rpx;
+    top: 330rpx;
     right: 0;
 }
 
@@ -31,17 +32,12 @@
 
 .adonebox, .adtwobox {
     position: absolute;
-    top: 200rpx;
 }
 
 .adonebox {
     top: 200rpx;
     left: 30rpx;
     animation: adonebox 0.5s ease-in-out infinite;
-}
-
-.adtwobox {
-    /* animation: adonebox 0.5s ease-in-out infinite;  */
 }
 
 @keyframes adonebox {
@@ -63,9 +59,16 @@
 }
 
 .topicon image, .topicon {
-    width: 331rpx;
-    height: 386rpx;
+    /* width: 331rpx;
+    height: 386rpx; */
+    width: 386rpx;
+    height: 340rpx;
     margin: 0 auto;
+    overflow: hidden;
+}
+
+.topicon image{
+    margin-top: 46rpx;
 }
 
 .topruletext {
@@ -148,20 +151,25 @@
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 5;
 }
 
 .closeimg {
-    width: 38rpx;
-    height: 38rpx;
+    /* width: 38rpx;
+    height: 38rpx; */
+    width: 80rpx;
+    height: 80rpx;
     position: absolute;
-    top: 20rpx;
-    right: 30rpx;
+    bottom: -110rpx;
+    left: 250rpx;
     z-index: 10;
 }
 
 .ruleMask .closeimg image {
-    width: 38rpx;
-    height: 38rpx;
+    /* width: 38rpx;
+    height: 38rpx; */
+    width: 80rpx;
+    height: 80rpx;
 }
 
 .ruleimg {
@@ -240,7 +248,7 @@
 .contactBtn, button {
     width: 278rpx;
     height: 79rpx;
-    background: rgba(241, 145, 73, 1);
+    background: #8E86F5;
     border-radius: 38rpx;
     text-align: center;
     line-height: 79rpx;
@@ -249,6 +257,7 @@
 
 scroll-view {
     position: relative;
+    z-index: 1;
 }
 
 .guize {
@@ -268,7 +277,7 @@ scroll-view {
 .nochancetitle {
     position: relative;
     margin-bottom: none;
-    margin-top: 0rpx;
+    margin-top: 80rpx;
     overflow: hidden;
 }
 
@@ -282,8 +291,10 @@ scroll-view {
 
 image.nochanceicon {
     display: block;
-    width: 355rpx;
-    height: 347rpx;
+    /* width: 355rpx;
+    height: 347rpx; */
+    width: 487rpx;
+    height: 228rpx;
     margin: 0 auto;
 }
 
@@ -299,7 +310,7 @@ image.nochanceicon {
 #nochancebtn, .toReceive {
     width: 400rpx;
     height: 70rpx;
-    background: rgba(241, 145, 73, 1);
+    background: #8E86F5;
     border-radius: 35rpx;
     font-size: 30rpx;
     color: rgba(254, 254, 254, 1);
@@ -310,8 +321,10 @@ image.nochanceicon {
 }
 
 image.loginicon, .loginicontitle {
-    width: 366rpx;
-    height: 318rpx;
+    /* width: 366rpx;
+    height: 318rpx; */
+    width: 330rpx;
+    height: 340rpx;
     margin: 0 auto;
 }
 
@@ -377,4 +390,12 @@ image.loginicon, .loginicontitle {
     position: absolute;
     right: 20rpx;
     top: 80rpx;
+}
+
+.bottomBg ,.bottomBg image{
+    width: 100%;
+    height: 366rpx;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }

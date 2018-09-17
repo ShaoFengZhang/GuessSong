@@ -128,15 +128,15 @@ Page({
         Loginfunc.requestURl(app, startGameUrl, "POST", {}, function(data) {
             console.log('startGameUrl', data.code);
             if (data.code == 210) {
-                // _this.setData({
-                //     ifshowNochanceMask: true,
-                // });
-                wx.showModal({
-                    title: '提示',
-                    content: '挑战机会不足',
-                    showCancel: false,
-                    success: function (res) {}
-                })
+                _this.setData({
+                    ifshowNochanceMask: true,
+                });
+                // wx.showModal({
+                //     title: '提示',
+                //     content: '挑战机会不足',
+                //     showCancel: false,
+                //     success: function (res) {}
+                // })
             };
             if (data.code == 200) {
                 wx.navigateTo({

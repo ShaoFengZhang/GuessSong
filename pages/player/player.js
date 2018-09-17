@@ -21,6 +21,7 @@ Page({
     onLoad: function(options) {
         console.log('onLoad');
         let _this = this;
+        app.globalData.userInfo.nickName = app.globalData.userInfo.nickName.slice(0,8);
         this.setData({
             userinfo: app.globalData.userInfo,
             questionNum: app.questionNum,
@@ -218,7 +219,7 @@ Page({
                         let endGameUrl = Loginfunc.domin + `/wx/opp/end`;
                         Loginfunc.requestURl(app, endGameUrl, "POST", {}, function(data) {
                             if (data.code == 200) {
-                                app.globalData.userGetRedNum = parseFloat(data.data.amount);
+                                app.globalData.userGetRedNum = parseFloat(data.data.amount).toFixed(2);
                                 console.log(app.globalData.userGetRedNum);
                             }
                         });
@@ -293,7 +294,7 @@ Page({
             answerbgColor: ['linear-gradient(to right, #ad64f3, #7977fc)', 'linear-gradient(to right, #ad64f3, #7977fc)', 'linear-gradient(to right, #ad64f3, #7977fc)', 'linear-gradient(to right, #ad64f3, #7977fc)'],
         });
         let _this = this;
-        let assetsUrl = "${app.globalData.appUrl}storage/";
+        let assetsUrl = `${app.globalData.appUrl}storage/`;
         let getAnswerTitleUrl = Loginfunc.domin + `wx/opp/question`;
         Loginfunc.requestURl(app, getAnswerTitleUrl, "POST", {}, function(data) {
             console.log('getAnswerTitleUrl', data);
@@ -302,7 +303,7 @@ Page({
                     data.data.option[i].value = data.data.option[i].value.slice(0, 8);
                 };
                 let audioSrc = assetsUrl + data.data.link;
-                console.log(audioSrc);
+                console.log('???????????',audioSrc);
                 _this.audioFunc(audioSrc);
                 _this.showTime = setTimeout(function() {
                     _this.setData({
