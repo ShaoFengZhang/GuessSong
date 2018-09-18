@@ -1,7 +1,8 @@
 .bg {
-    background-image: url('https://xcx6.18yx.com/storage/web/playerbg.png');
+    /* background-image: url('https://xcx6.18yx.com/storage/web/playerbg.png'); */
     position: relative;
     overflow: hidden;
+    background: linear-gradient(to bottom, #864cfc, #d38ce8);
 }
 
 .ad image {
@@ -25,6 +26,7 @@
     overflow: hidden;
     padding: 26rpx 30rpx;
     box-sizing: border-box;
+    z-index: 5;
 }
 
 .scroll-view-item {
@@ -72,15 +74,24 @@
     margin-top: 24rpx;
 }
 
-.nonum image{
+.nonum image {
     display: block;
     width: 364rpx;
     height: 302rpx;
     margin: 0 auto;
 }
 
-.tecentAD{
+.tecentAD {
     position: absolute;
     bottom: 0;
     left: 0;
+}
+
+.bottomBg ,.bottomBg image{
+    width: 100%;
+    height: 366rpx;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
 }

@@ -320,7 +320,7 @@ image.smallbut {
     width: 68rpx;
     height: 68rpx;
     position: absolute;
-    top: 98rpx;
+    top: 90rpx;
     left: 98rpx;
 }
 

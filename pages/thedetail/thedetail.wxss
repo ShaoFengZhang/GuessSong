@@ -2,6 +2,7 @@
     position: relative;
     overflow: hidden;
     border-top: 2rpx solid #aaa;
+     /* background: linear-gradient(to bottom, #864CFC , #D38CE8); */
 }
 
 .listitem {
