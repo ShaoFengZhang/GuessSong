@@ -1,5 +1,5 @@
 <view class="bg">
-    <view style='position:absolute;top:0;left:0;z-index:10;'>
+    <view style='width:100%;position:absolute;top:0;left:0;z-index:10;'>
         <view class='rankTopADBox rankadbox'>
             <view class='topad ad' wx:if="{{ifShowRankOneAd}}" bindtap='adClickEvent' data-adId='{{rankOneAd.id}}'>
                 <navigator wx:if="{{rankOneAd.type==1}}" target="miniProgram" open-type="navigate" app-id="{{rankOneAd.appid}}" path="{{rankOneAd.link || '/pages/index/index'}}" extra-data="" version="release">

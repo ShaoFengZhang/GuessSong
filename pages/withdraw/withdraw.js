@@ -33,27 +33,6 @@ Page({
             })
             console.log(OneAd)
         };
-        if (app.globalData.draw2Ad) {
-            let TwoAd = util.sortingAdData(app.globalData.draw2Ad.adList);
-            this.setData({
-                TwoAd: TwoAd,
-                ifShowTwoAd: app.globalData.draw2Ad.display == 1 ? true : false,
-            })
-            console.log(TwoAd);
-        };
-        if (this.adclick) {
-            this.adclick = false;
-            this.setData({
-                showADBox: false,
-                showinput: true,
-            });
-            if (this.withDrawType == 1) {
-                this.withdrawFuntype1();
-            };
-            if (this.withDrawType == 2) {
-                this.withdrawFuntype2();
-            };
-        }
     },
 
 
@@ -149,28 +128,15 @@ Page({
     },
 
     // 全部提现按钮
-    allwithdraw: function() {
-        this.setData({
-            showADBox: true,
-            showinput: false,
-        });
-        this.withDrawType = 1;
-    },
-
-    withdrawFuntype1: function() {
+    allwithdraw: function () {
         console.log('allwithdraw');
-        wx.showLoading({
-            title: '数据加载中',
-            mask: true,
-        });
         let withDrawUrl = Loginfunc.domin + `wx/user/withDraw`;
         if (!this.data.userbalance || this.data.userbalance < app.minDraw) {
-            wx.hideLoading();
             wx.showModal({
                 title: '提示',
                 content: `余额大于${app.minDraw}元才可提现`,
                 showCancel: false,
-                success: function(res) {
+                success: function (res) {
                     return;
                 }
             });
@@ -178,19 +144,14 @@ Page({
         };
         Loginfunc.requestURl(app, withDrawUrl, "POST", {
             amount: this.data.userbalance
-        }, function(data) {
+        }, function (data) {
             console.log('withDrawUrl', data);
-            wx.hideLoading();
             if (data.code == 200) {
                 wx.showModal({
                     title: '提示',
                     content: '提现成功！提现金额将在1-5个工作日打到您的微信零钱中请注意查看。',
                     showCancel: false,
-                    success: function(res) {
-                        wx.switchTab({
-                            url: '/pages/usercenter/usercenter'
-                        })
-                    }
+                    success: function (res) { }
                 })
             };
             if (data.code == 202) {
@@ -198,7 +159,7 @@ Page({
                     title: '提示',
                     content: '参数错误',
                     showCancel: false,
-                    success: function(res) {}
+                    success: function (res) { }
                 })
             };
             if (data.code == 210) {
@@ -206,7 +167,7 @@ Page({
                     title: '提示',
                     content: '提现金额超过可提现金额',
                     showCancel: false,
-                    success: function(res) {}
+                    success: function (res) { }
                 })
             };
             if (data.code == 211) {
@@ -214,7 +175,7 @@ Page({
                     title: '提示',
                     content: '提现失败',
                     showCancel: false,
-                    success: function(res) {}
+                    success: function (res) { }
                 })
             };
             if (data.code == 212) {
@@ -222,7 +183,7 @@ Page({
                     title: '提示',
                     content: '每日提现次数超额',
                     showCancel: false,
-                    success: function(res) {}
+                    success: function (res) { }
                 })
             };
             if (data.code == 213) {
@@ -230,64 +191,35 @@ Page({
                     title: '提示',
                     content: `单次提现额度不得超过${app.maxDraw}元`,
                     showCancel: false,
-                    success: function(res) {}
+                    success: function (res) { }
                 })
             };
         });
     },
 
     // 提现按钮
-    withdraw: function() {
+    withdraw: function () {
         let _this = this;
         let checkmoney = this.drawamount;
-        console.log(checkmoney);
-        if (checkmoney == "NaN" || checkmoney == undefined || isNaN(checkmoney)) {
-            wx.hideLoading();
-            wx.showModal({
-                title: '提示',
-                content: '请填写提现金额',
-                showCancel: false,
-                success: function(res) {}
-            });
-            return;
-        } else {
-            this.setData({
-                showADBox: true,
-                showinput: false,
-            });
-            this.withDrawType = 2;
-        }
-    },
-
-    withdrawFuntype2: function() {
-        wx.showLoading({
-            title: '数据加载中',
-            mask: true,
-        });
-        let _this = this;
-        let checkmoney = this.drawamount;
-        this.drawamount = null;
         let withDrawUrl = Loginfunc.domin + `wx/user/withDraw`;
         console.log(checkmoney);
         if (checkmoney == "NaN") {
-            wx.hideLoading();
             wx.showModal({
                 title: '提示',
                 content: '请填写提现金额',
                 showCancel: false,
-                success: function(res) {}
+                success: function (res) { }
             });
             return;
         };
 
         if (checkmoney) {
-            wx.hideLoading();
             if (checkmoney < app.minDraw) {
                 wx.showModal({
                     title: '提示',
                     content: `提现金额不得小于${app.minDraw}元`,
                     showCancel: false,
-                    success: function(res) {
+                    success: function (res) {
                         return;
                     }
                 })
@@ -298,7 +230,7 @@ Page({
                     title: '提示',
                     content: '提现金额不能高于账户余额',
                     showCancel: false,
-                    success: function(res) {
+                    success: function (res) {
                         return;
                     }
                 });
@@ -307,18 +239,14 @@ Page({
             if (checkmoney >= app.minDraw && checkmoney <= this.data.userbalance) {
                 Loginfunc.requestURl(app, withDrawUrl, "POST", {
                     amount: checkmoney
-                }, function(data) {
+                }, function (data) {
                     console.log('withDrawUrl', data);
                     if (data.code == 200) {
                         wx.showModal({
                             title: '提示',
                             content: '提现成功！提现金额将在1-5个工作日打到您的微信零钱中请注意查看。',
                             showCancel: false,
-                            success: function(res) {
-                                wx.switchTab({
-                                    url: '/pages/usercenter/usercenter'
-                                })
-                            }
+                            success: function (res) { }
                         })
                     };
                     if (data.code == 202) {
@@ -326,7 +254,7 @@ Page({
                             title: '提示',
                             content: '参数错误',
                             showCancel: false,
-                            success: function(res) {}
+                            success: function (res) { }
                         })
                     };
                     if (data.code == 210) {
@@ -334,7 +262,7 @@ Page({
                             title: '提示',
                             content: '提现金额超过可提现金额',
                             showCancel: false,
-                            success: function(res) {}
+                            success: function (res) { }
                         })
                     };
                     if (data.code == 211) {
@@ -342,7 +270,7 @@ Page({
                             title: '提示',
                             content: '提现失败',
                             showCancel: false,
-                            success: function(res) {}
+                            success: function (res) { }
                         })
                     };
                     if (data.code == 212) {
@@ -350,7 +278,7 @@ Page({
                             title: '提示',
                             content: '每日提现次数超额',
                             showCancel: false,
-                            success: function(res) {}
+                            success: function (res) { }
                         })
                     };
                     if (data.code == 213) {
@@ -358,21 +286,21 @@ Page({
                             title: '提示',
                             content: `单次提现额度不得超过${app.maxDraw}元`,
                             showCancel: false,
-                            success: function(res) {}
+                            success: function (res) { }
                         })
                     };
                 });
             }
         } else {
-            wx.hideLoading();
             wx.showModal({
                 title: '提示',
                 content: '请填写提现金额',
                 showCancel: false,
-                success: function(res) {}
+                success: function (res) { }
             })
         };
     },
+
 
     // 输入框获得焦点时
     inputfocus: function(e) {
