@@ -151,49 +151,20 @@ Page({
                     title: '提示',
                     content: '提现成功！提现金额将在1-5个工作日打到您的微信零钱中请注意查看。',
                     showCancel: false,
-                    success: function (res) { }
+                    success: function (res) {
+                        wx.switchTab({
+                            url: '/pages/usercenter/usercenter'
+                        })
+                     }
                 })
-            };
-            if (data.code == 202) {
+            } else {
                 wx.showModal({
-                    title: '提示',
-                    content: '参数错误',
+                    title: '提现失败',
+                    content: `${data.msg}`,
                     showCancel: false,
                     success: function (res) { }
                 })
-            };
-            if (data.code == 210) {
-                wx.showModal({
-                    title: '提示',
-                    content: '提现金额超过可提现金额',
-                    showCancel: false,
-                    success: function (res) { }
-                })
-            };
-            if (data.code == 211) {
-                wx.showModal({
-                    title: '提示',
-                    content: '提现失败',
-                    showCancel: false,
-                    success: function (res) { }
-                })
-            };
-            if (data.code == 212) {
-                wx.showModal({
-                    title: '提示',
-                    content: '每日提现次数超额',
-                    showCancel: false,
-                    success: function (res) { }
-                })
-            };
-            if (data.code == 213) {
-                wx.showModal({
-                    title: '提示',
-                    content: `单次提现额度不得超过${app.maxDraw}元`,
-                    showCancel: false,
-                    success: function (res) { }
-                })
-            };
+            }
         });
     },
 
@@ -246,49 +217,21 @@ Page({
                             title: '提示',
                             content: '提现成功！提现金额将在1-5个工作日打到您的微信零钱中请注意查看。',
                             showCancel: false,
-                            success: function (res) { }
+                            success: function (res) { 
+                                wx.switchTab({
+                                    url: '/pages/usercenter/usercenter'
+                                })
+                            }
                         })
-                    };
-                    if (data.code == 202) {
+                    }else{
                         wx.showModal({
-                            title: '提示',
-                            content: '参数错误',
+                            title: '提现失败',
+                            content: `${data.msg}`,
                             showCancel: false,
-                            success: function (res) { }
-                        })
-                    };
-                    if (data.code == 210) {
-                        wx.showModal({
-                            title: '提示',
-                            content: '提现金额超过可提现金额',
-                            showCancel: false,
-                            success: function (res) { }
-                        })
-                    };
-                    if (data.code == 211) {
-                        wx.showModal({
-                            title: '提示',
-                            content: '提现失败',
-                            showCancel: false,
-                            success: function (res) { }
-                        })
-                    };
-                    if (data.code == 212) {
-                        wx.showModal({
-                            title: '提示',
-                            content: '每日提现次数超额',
-                            showCancel: false,
-                            success: function (res) { }
-                        })
-                    };
-                    if (data.code == 213) {
-                        wx.showModal({
-                            title: '提示',
-                            content: `单次提现额度不得超过${app.maxDraw}元`,
-                            showCancel: false,
-                            success: function (res) { }
-                        })
-                    };
+                            success: function (res) {}
+                        }) 
+                    }
+                   
                 });
             }
         } else {
